@@ -1,0 +1,14 @@
+services:
+  server-discovery:
+    image: ecommerce-registry-server:1.0.0
+    build:
+      dockerfile: Dockerfile
+    container_name: ecommerce-registry-server
+    ports:
+      - 7070:7070
+    restart: unless-stopped
+    networks:
+      - server-discovery-network
+networks:
+  server-discovery-network:
+    name: ecommerce-network
