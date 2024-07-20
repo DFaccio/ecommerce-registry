@@ -38,7 +38,8 @@ Na aplicação que deseja registrar, realize os passos indicados abaixo.
 4. No arquivo application.properties copie e cole as duas propriedades abaixo.
 
        server.port=0
-       eureka.instance.instance-id=${spring.application.name}:${random.int}
+       eureka.instance.instance-id=${spring.application.name}:${server.port}
+
 5. Adicione a propriedade *eureka.client.serviceUrl.defaultZone* conforme valor abaixo.
     * Caso sua apliação não esteja em container, o endereço será: http://localhost:7070/eureka
     * Caso em container, o endereço será: http://server-discovery:7070/eureka
